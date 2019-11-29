@@ -1,8 +1,8 @@
 {
-  "name": "hello-scss",
+  "name": "learn-scss",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "dev": "webpack-dev-server"
   },
