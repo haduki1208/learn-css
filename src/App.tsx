@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Reset } from "styled-reset";
-import MenuButton from "./atoms/MenuButton";
+import MenuButton from "./components/atoms/MenuButton";
 
 const Wrapper = styled.section`
   margin: 1rem;
