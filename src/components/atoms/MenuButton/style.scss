@@ -1,0 +1,44 @@
+.menu_button {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #444;
+}
+
+.base_border {
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  background-color: #444;
+  right: 0;
+  left: 0;
+  margin: auto;
+  transition: all 0.5s;
+}
+
+.border_top {
+  @extend .base_border;
+  top: 15%;
+  .menu_button:hover & {
+    top: 45%;
+    transform: rotate(315deg);
+  }
+}
+
+.border_middle {
+  @extend .base_border;
+  top: 0;
+  bottom: 0;
+  .menu_button:hover & {
+    width: 0;
+  }
+}
+
+.border_bottom {
+  @extend .base_border;
+  bottom: 15%;
+  .menu_button:hover & {
+    bottom: 45%;
+    transform: rotate(-315deg);
+  }
+}
