@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Foo from "./Foo";
+import App from "./App";
+// import "reset-css";
 
-ReactDOM.render(<Foo />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));
