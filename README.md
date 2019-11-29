@@ -13,8 +13,3 @@
 # scss
 
 - 特になし
-
-# リンク
-
-- [styled-components版](https://github.com/haduki1208/learn-styled-components)
-- [scss版](https://github.com/haduki1208/learn-scss)
