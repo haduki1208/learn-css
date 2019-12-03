@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const MenuButton = styled.div`
+const MenuButton = styled.button`
+  appearance: none;
   position: relative;
   width: 2.5rem;
   height: 2.5rem;
   border: 1px solid #444;
+  padding: 0;
 `;
 
 const BaseBorder = styled.div`

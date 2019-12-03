@@ -1,8 +1,10 @@
 .menu_button {
+  appearance: none;
   position: relative;
   width: 2.5rem;
   height: 2.5rem;
   border: 1px solid #444;
+  padding: 0;
 }
 
 .base_border {

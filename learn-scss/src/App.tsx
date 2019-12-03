@@ -1,13 +1,13 @@
 import React from "react";
 import MenuButton from "./components/atoms/MenuButton";
 
-const style: React.CSSProperties = {
+const sectionStyle: React.CSSProperties = {
   margin: "1rem"
 };
 
 const App: React.FC<{}> = (): JSX.Element => {
   return (
-    <section style={style}>
+    <section style={sectionStyle}>
       <MenuButton></MenuButton>
     </section>
   );
