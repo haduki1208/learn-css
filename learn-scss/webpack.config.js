@@ -67,6 +67,6 @@ module.exports = {
   devServer: {
     contentBase: resolve(__dirname, "dist"),
     host: "0.0.0.0",
-    port: 1235
+    port: 3000
   }
 };

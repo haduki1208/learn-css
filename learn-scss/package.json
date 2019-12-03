@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.tsx",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "sb": "start-storybook -p 5000"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,8 @@
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
+    "@storybook/preset-typescript": "^1.1.0",
+    "@storybook/react": "^5.2.8",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
     "autoprefixer": "^9.7.2",
@@ -19,6 +22,7 @@
     "css-loader": "^3.2.0",
     "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
+    "react-docgen-typescript-loader": "^3.6.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",
     "ts-loader": "^6.2.1",
