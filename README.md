@@ -1,19 +1,39 @@
 # 概要
 
-- styled-components と scss の比較コード集
+- scss と styled-components の比較
 
-# 課題
+# how to use
 
-- storybookを導入
+## scss
 
-# styled-components
+```sh
+$ cd learn-scss/
+$ npm run sb
+# localhost:5000にアクセス
+```
 
-- vscode pulginのおすすめ
-  - vscode-styled-components
-    - 必須
+## styled-components
+
+```sh
+$ cd learn-styled-components/
+$ npm run sb
+# localhost:5001にアクセス
+```
+
+# 便利ツール
+
+## 共通
+
+- vscode pulgin
   - color highlight
-    - あると HEXColorCode と rgb に色がつく。
+    - HEXColorCode と rgb に色がつく。
 
-# scss
+## scss
 
 - 特になし
+
+## styled-components
+
+- vscode pulgin
+  - vscode-styled-components
+    - 必須 テンプレート文字列内でcssの補完が効く
