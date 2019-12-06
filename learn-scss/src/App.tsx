@@ -1,5 +1,4 @@
 import React from "react";
-import MenuButton from "./components/atoms/MenuButton";
 
 const sectionStyle: React.CSSProperties = {
   margin: "1rem"
@@ -8,7 +7,7 @@ const sectionStyle: React.CSSProperties = {
 const App: React.FC<{}> = (): JSX.Element => {
   return (
     <section style={sectionStyle}>
-      <MenuButton></MenuButton>
+      <h2>Hello world!</h2>
     </section>
   );
 };
