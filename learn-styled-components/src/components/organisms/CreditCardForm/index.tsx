@@ -11,7 +11,9 @@ type TProps = {
 };
 
 const renderOption = (value: string): JSX.Element => (
-  <option value={value}>{value}</option>
+  <option key={value} value={value}>
+    {value}
+  </option>
 );
 
 const CreditCardForm: React.FC<TProps> = ({
@@ -22,9 +24,9 @@ const CreditCardForm: React.FC<TProps> = ({
   focusCW
 }: TProps): JSX.Element => {
   return (
-    <article>
-      <form>
-        <td>Card Number</td>
+    <form>
+      <dl>
+        <dt>Card Number</dt>
         <dd>
           <input
             type="text"
@@ -35,7 +37,7 @@ const CreditCardForm: React.FC<TProps> = ({
             }
           />
         </dd>
-        <span>Card Name</span>
+        <dt>Card Name</dt>
         <dd>
           <input
             type="text"
@@ -45,7 +47,7 @@ const CreditCardForm: React.FC<TProps> = ({
             }
           />
         </dd>
-        <span>Expiration Date</span>
+        <dt>Expiration Date</dt>
         <dd>
           <select
             value={creditCard.month}
@@ -65,7 +67,7 @@ const CreditCardForm: React.FC<TProps> = ({
             {yearList.map(renderOption)}
           </select>
         </dd>
-        <span>CW</span>
+        <dt>CW</dt>
         <dd>
           <input
             type="text"
@@ -78,8 +80,8 @@ const CreditCardForm: React.FC<TProps> = ({
             onBlur={(): void => focusCW(false)}
           />
         </dd>
-      </form>
-    </article>
+      </dl>
+    </form>
   );
 };
 
