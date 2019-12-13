@@ -1,6 +1,6 @@
 import React from "react";
-import CreditCardForm from "./CreditCardForm";
+import CreditCard from "./CreditCard";
 
 export default { title: "organisms" };
 
-export const creditCard = () => <CreditCardForm></CreditCardForm>;
+export const creditCard = () => <CreditCard></CreditCard>;
