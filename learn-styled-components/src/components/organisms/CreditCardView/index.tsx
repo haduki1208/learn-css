@@ -4,8 +4,8 @@ import { TCreditCard } from "../CreditCard";
 
 const CardWrapper = styled.div`
   position: relative;
-  width: 430px;
-  height: 270px;
+  width: 85.6mm;
+  height: 53.98mm;
 `;
 
 const CardBase = styled.div`
