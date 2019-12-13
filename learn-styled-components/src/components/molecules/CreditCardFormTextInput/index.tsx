@@ -1,26 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-type TSize = "large" | "medium" | "small";
-
-const Fieldset = styled.fieldset<{ size: TSize }>`
-  appearance: none;
-  margin: 0 auto;
-  padding: 0;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ${({ size }): string => {
-    if (size === "large") return "100%";
-    if (size === "medium") return "70%";
-    return "30%";
-  }};
-`;
-
-const Legend = styled.legend`
-  font-size: 0.8rem;
-`;
+import CreditCardFormFieldset, { TSize } from "../CreditCardFormFieldset";
 
 const InputBox = styled.input`
   appearance: none;
@@ -53,8 +33,7 @@ const CreditCardFormTextInput: React.FC<TProps> = ({
   onFocus,
   onBlur
 }: TProps): JSX.Element => (
-  <Fieldset size={size}>
-    <Legend>{title}</Legend>
+  <CreditCardFormFieldset size={size} title={title}>
     <InputBox
       type="text"
       pattern={pattern}
@@ -63,7 +42,7 @@ const CreditCardFormTextInput: React.FC<TProps> = ({
       onFocus={onFocus}
       onBlur={onBlur}
     />
-  </Fieldset>
+  </CreditCardFormFieldset>
 );
 
 export default React.memo(

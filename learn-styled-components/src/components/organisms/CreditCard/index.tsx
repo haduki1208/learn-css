@@ -29,7 +29,7 @@ export default (): JSX.Element => {
   });
 
   const changeCardContent = (key: keyof TCreditCard, value: string): void =>
-    setCreditCard({ ...creditCard, [key]: value });
+    setCreditCard(prev => ({ ...prev, [key]: value }));
   const focusCW = (isFocus: boolean): void => setIsFocus(isFocus);
 
   return (
