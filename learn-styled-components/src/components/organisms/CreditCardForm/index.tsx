@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { TCreditCard } from "../CreditCard";
 import CreditCardFormTextInput from "../../molecules/CreditCardFormTextInput";
+import CreditCardFormDateSelect from "../../molecules/CreditCardFormDateSelect";
 
 type TProps = {
   creditCard: TCreditCard;
@@ -10,12 +11,6 @@ type TProps = {
   changeCardContent: (key: keyof TCreditCard, value: string) => void;
   focusCW: (isFocus: boolean) => void;
 };
-
-const renderOption = (value: string): JSX.Element => (
-  <option key={value} value={value}>
-    {value}
-  </option>
-);
 
 const Form = styled.form`
   width: 400px;
@@ -29,49 +24,6 @@ const Form = styled.form`
   align-items: baseline;
   flex-wrap: wrap;
   align-content: flex-start;
-`;
-
-const Fieldset = styled.fieldset`
-  appearance: none;
-  margin: 0 auto;
-  padding: 0;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`;
-
-const Legend = styled.legend`
-  font-size: 0.8rem;
-`;
-
-const InputBox = styled.input`
-  appearance: none;
-  border: 1.25px solid #bbb;
-  border-radius: 4px;
-  padding: 4px 8px;
-  height: 2.25rem;
-  line-height: 2.25rem;
-  width: 100%;
-  font-size: 0.8rem;
-  box-sizing: border-box;
-`;
-
-const DateWrapper = styled.div`
-  width: 100%;
-  display: flex;
-`;
-
-const DateSelect = styled.select`
-  border-radius: 4px;
-  height: 2.25rem;
-  line-height: 2.25rem;
-  width: 40%;
-  font-size: 0.8rem;
-  margin-right: 8px;
-  background-color: #fff;
-  box-sizing: border-box;
 `;
 
 const CreditCardForm: React.FC<TProps> = ({
@@ -98,27 +50,20 @@ const CreditCardForm: React.FC<TProps> = ({
           changeCardContent("name", currentTarget.value)
         }
       />
-      <Fieldset style={{ width: "70%" }}>
-        <Legend>Expiration Date</Legend>
-        <DateWrapper>
-          <DateSelect
-            value={creditCard.month}
-            onChange={({ currentTarget }): void =>
-              changeCardContent("month", currentTarget.value)
-            }
-          >
-            {monthList.map(renderOption)}
-          </DateSelect>
-          <DateSelect
-            value={creditCard.year}
-            onChange={({ currentTarget }): void =>
-              changeCardContent("year", currentTarget.value)
-            }
-          >
-            {yearList.map(renderOption)}
-          </DateSelect>
-        </DateWrapper>
-      </Fieldset>
+      <CreditCardFormDateSelect
+        size="medium"
+        title="Expiration Date"
+        month={creditCard.month}
+        year={creditCard.year}
+        monthList={monthList}
+        yearList={yearList}
+        onChangeMonth={({ currentTarget }): void =>
+          changeCardContent("month", currentTarget.value)
+        }
+        onChangeYear={({ currentTarget }): void =>
+          changeCardContent("year", currentTarget.value)
+        }
+      />
       <CreditCardFormTextInput
         size="small"
         title="CW"
