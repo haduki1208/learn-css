@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { TCreditCard } from "../CreditCard";
+import CreditCardFormTextInput from "../../molecules/CreditCardFormTextInput";
 
 type TProps = {
   creditCard: TCreditCard;
@@ -82,27 +83,21 @@ const CreditCardForm: React.FC<TProps> = ({
 }: TProps): JSX.Element => {
   return (
     <Form>
-      <Fieldset>
-        <Legend>Card Number</Legend>
-        <InputBox
-          type="text"
-          pattern="\d{14,16}"
-          value={creditCard.number}
-          onChange={({ currentTarget }): void =>
-            changeCardContent("number", currentTarget.value)
-          }
-        />
-      </Fieldset>
-      <Fieldset>
-        <Legend>Card Name</Legend>
-        <InputBox
-          type="text"
-          value={creditCard.name}
-          onChange={({ currentTarget }): void =>
-            changeCardContent("name", currentTarget.value)
-          }
-        />
-      </Fieldset>
+      <CreditCardFormTextInput
+        title="Card Number"
+        pattern="\d{14,16}"
+        value={creditCard.number}
+        onChange={({ currentTarget }): void =>
+          changeCardContent("number", currentTarget.value)
+        }
+      />
+      <CreditCardFormTextInput
+        title="Card Name"
+        value={creditCard.name}
+        onChange={({ currentTarget }): void =>
+          changeCardContent("name", currentTarget.value)
+        }
+      />
       <Fieldset style={{ width: "70%" }}>
         <Legend>Expiration Date</Legend>
         <DateWrapper>
@@ -124,19 +119,17 @@ const CreditCardForm: React.FC<TProps> = ({
           </DateSelect>
         </DateWrapper>
       </Fieldset>
-      <Fieldset style={{ width: "30%" }}>
-        <Legend>CW</Legend>
-        <InputBox
-          type="text"
-          pattern="\d{3,4}"
-          value={creditCard.cw}
-          onChange={({ currentTarget }): void =>
-            changeCardContent("cw", currentTarget.value)
-          }
-          onFocus={(): void => focusCW(true)}
-          onBlur={(): void => focusCW(false)}
-        />
-      </Fieldset>
+      <CreditCardFormTextInput
+        size="small"
+        title="CW"
+        pattern="\d{3,4}"
+        value={creditCard.cw}
+        onChange={({ currentTarget }): void =>
+          changeCardContent("cw", currentTarget.value)
+        }
+        onFocus={(): void => focusCW(true)}
+        onBlur={(): void => focusCW(false)}
+      />
     </Form>
   );
 };
