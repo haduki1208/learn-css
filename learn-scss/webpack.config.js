@@ -2,6 +2,7 @@ const { resolve } = require("path");
 const { TypedCssModulesPlugin } = require("typed-css-modules-webpack-plugin");
 
 module.exports = {
+  mode: "development",
   entry: resolve(__dirname, "src/index.tsx"),
   output: {
     path: resolve(__dirname, "dist"),
