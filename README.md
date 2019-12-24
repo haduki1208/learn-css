@@ -2,12 +2,13 @@
 
 - scss と styled-components の比較
 
-# how to use
+# 使い方
 
 ## scss
 
 ```sh
 $ cd learn-scss/
+$ npm i
 $ npm run sb
 # localhost:5000にアクセス
 ```
@@ -16,6 +17,7 @@ $ npm run sb
 
 ```sh
 $ cd learn-styled-components/
+$ npm i
 $ npm run sb
 # localhost:5001にアクセス
 ```
